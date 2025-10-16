@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../../core/global_widget/custombuttonwhite.dart';
 import '../../../../core/utility/app_colors.dart';
 import '../../controller/profile_controller.dart';
 
@@ -138,8 +139,13 @@ class ProfilePage extends StatelessWidget {
 
                         ],
                       ),
+SizedBox(height: 24.h,),
+                      CustomButtonWhite(
+                        text:'Edit Profile',
+                      onPressed: (){
 
-
+                      },
+                      ),
                       SizedBox(height: 40.h),
 
                       // About Me Section
