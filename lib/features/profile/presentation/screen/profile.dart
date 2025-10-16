@@ -76,8 +76,8 @@ class ProfilePage extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 24.h),
-                     
-                      
+
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -147,12 +147,12 @@ SizedBox(height: 24.h,),
 
                       },
                       ),
-                      SizedBox(height: 40.h),
+                      SizedBox(height: 15.h),
 
                       ProfileTabsWidget(),
 
 
-                      SizedBox(height: 200.h),
+                     // SizedBox(height: 200.h),
 
 
                     ],
