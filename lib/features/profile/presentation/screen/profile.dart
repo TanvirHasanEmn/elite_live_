@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../../core/global_widget/custombuttonwhite.dart';
 import '../../../../core/utility/app_colors.dart';
 import '../../controller/profile_controller.dart';
+import '../widget/profile_tab_widget.dart';
 
 class ProfilePage extends StatelessWidget {
   final ProfileController controller = Get.put(ProfileController());
@@ -148,31 +149,10 @@ SizedBox(height: 24.h,),
                       ),
                       SizedBox(height: 40.h),
 
-                      // About Me Section
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          'About Me',
-                          style: GoogleFonts.poppins(
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF2D2D2D),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 8.h),
-                      Text(
-                        "A brief description of the agency, its mission, services, and areas of expertise. For example, 'We specialize in custom adventure tours and eco-friendly expeditions.",
-                        style: GoogleFonts.poppins(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w400,
-                          color: Color(0xFF636F85),
-                        ),
-                      ),
+                      ProfileTabsWidget(),
 
 
-
-                      SizedBox(height: 400.h),
+                      SizedBox(height: 200.h),
 
 
                     ],
