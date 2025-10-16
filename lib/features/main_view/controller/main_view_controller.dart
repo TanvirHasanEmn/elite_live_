@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../event/screen/event_screen.dart';
 import '../../home/screen/home_screen.dart';
-import '../../profile/screen/profile_screen.dart';
+import '../../profile/presentation/screen/profile.dart';
 import '../../search/presentation/screens/search.dart';
 
 class MainViewController extends GetxController {
@@ -13,9 +12,8 @@ class MainViewController extends GetxController {
   late final List<Widget> screens = [
     HomeScreen(),
     Search(),
-   // SearchScreen(),
     EventScreen(),
-    ProfileScreen(),
+    ProfilePage(),
   ];
 
   void changePage(int index) {
