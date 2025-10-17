@@ -5,6 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../core/utility/app_colors.dart';
 import '../../controller/settings_controller.dart';
+import 'delete.dart';
+import 'logout.dart';
 
 class SettingsPage extends StatelessWidget {
   final SettingsController controller = Get.put(SettingsController());
@@ -32,10 +34,22 @@ class SettingsPage extends StatelessWidget {
                 Positioned(
                   top: 50.h,
                   left: 20.w,
-                  child: Text("Profile", style: GoogleFonts.inter(
-                      fontWeight:FontWeight.w600,
-                      fontSize: 20.sp
-                  ),),
+                  child:     Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () => Get.back(),
+                        child: const Icon(Icons.arrow_back,color: Colors.white,),
+                      ),
+                      SizedBox(width: 20.w),
+                      Text('Settings',
+                        style: GoogleFonts.inter(
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
                 ),
                 // White section with rounded corners
                 Container(
@@ -152,6 +166,7 @@ class SettingsPage extends StatelessWidget {
                       settingTile(
                         'assets/icons/edit_profile2.png',
                         'Moderator',
+                        showArrow: true,
                         color: Color(0xFF2D2D2D), // icon color
                         textColor: Color(0xFF2D2D2D), // text color
                         //onTap: () => Get.to(() => EditProfilePage()),
@@ -208,7 +223,7 @@ class SettingsPage extends StatelessWidget {
                         color: Color(0xFFDC0132), // icon color
                         textColor: Color(0xFFDC0132), // text color
                         onTap: () {
-                          //showDeleteBottomSheet(Get.context!);
+                          showDeleteBottomSheet(Get.context!);
                         },
                       ),
 
@@ -218,7 +233,7 @@ class SettingsPage extends StatelessWidget {
                         color: Color(0xFFDC0132), // icon color
                         textColor: Color(0xFFDC0132), // text color
                         onTap: () {
-                          //showLogoutBottomSheet(Get.context!);
+                          showLogoutBottomSheet(Get.context!);
                         },
                       ),
                       SizedBox(height: 40.h),

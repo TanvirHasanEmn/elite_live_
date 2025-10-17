@@ -145,7 +145,7 @@ class ProfilePage extends StatelessWidget {
 
                         ],
                       ),
-SizedBox(height: 24.h,),
+ SizedBox(height: 24.h,),
                       CustomButtonWhite(
                         text:'Edit Profile',
                       onPressed: (){

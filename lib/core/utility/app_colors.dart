@@ -73,4 +73,11 @@ class AppColors {
   static const Color paymentIconBorderColor = Color(0xff666666);
   static const Color languageBorderColor = Color(0xff3F3F3F);
   static const Color lightModeontainerBg = Color(0xffF7F7F7);
+
+  static  Gradient primaryGradientColor = LinearGradient(
+    begin: Alignment.topRight,
+    end: Alignment.bottomLeft,
+    colors: [
+      Color(0xFF591AD4), Color(0xFFC121A0).withValues(alpha: 0.075)
+    ],);
 }
