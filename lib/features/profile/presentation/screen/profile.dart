@@ -1,3 +1,4 @@
+import 'package:elites_live/features/profile/presentation/screen/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -41,7 +42,11 @@ class ProfilePage extends StatelessWidget {
                           fontSize: 20.sp
                       ),),
                         SizedBox(width: 240.w,),
-                      Image.asset("assets/icons/settings.png",height: 24.h, width: 24.w,),
+                      InkWell(
+                          onTap: (){
+                            Get.to(()=>SettingsPage());
+                          },
+                          child: Image.asset("assets/icons/settings.png",height: 24.h, width: 24.w,)),
                     ],
                   ),
                 ),
