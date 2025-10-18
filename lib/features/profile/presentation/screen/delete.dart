@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../../core/route/app_route.dart';
 import '../../../../core/utility/app_colors.dart';
 import '../../controller/logout_controller.dart';
 
@@ -30,13 +31,18 @@ class DeleteBottomSheet extends StatelessWidget {
         children: [
 
           SizedBox(height: 15.h),
-          Text("Delete ",
-            style: GoogleFonts.poppins(
+          Text(
+            "Delete",
+            style: TextStyle(
               fontSize: 24.sp,
               fontWeight: FontWeight.w600,
-              color: AppColors.primaryColor,
+              foreground: Paint()
+                ..shader = AppColors.primaryGradient.createShader(
+                  Rect.fromLTWH(0.0, 0.0, 200.0, 70.0),
+                ),
             ),
           ),
+
           SizedBox(height: 8.h),
           Text("Are you sure you want\nto Delete ?",
             textAlign: TextAlign.center,
@@ -51,6 +57,7 @@ class DeleteBottomSheet extends StatelessWidget {
             children: [
               Expanded(
                 child: Container(
+                  height: 48.h,
                   decoration: BoxDecoration(
                     gradient: AppColors.primaryGradient,
                     borderRadius: BorderRadius.circular(40.r),
@@ -70,7 +77,7 @@ class DeleteBottomSheet extends StatelessWidget {
                     child: Text(
                       "Cancel",
                       style: TextStyle(
-                        fontSize: 24,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.bold,
                         foreground: Paint()
                           ..shader = AppColors.primaryGradient.createShader(
@@ -84,26 +91,36 @@ class DeleteBottomSheet extends StatelessWidget {
 
               SizedBox(width: 10.w),
               Expanded(
-                child: ElevatedButton(
-                  onPressed: () {
-                   // Get.to(() => Login());
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor:AppColors.primaryColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40.r),
-                    ),
-                    padding: EdgeInsets.symmetric(vertical: 14.h),
+                child: Container(
+                  height: 48.h,
+                  decoration: BoxDecoration(
+                    gradient: AppColors.primaryGradient,
+                    borderRadius: BorderRadius.circular(40.r),
                   ),
-                  child: Text("Yes, Delete ",
-                    style: GoogleFonts.poppins(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFF2D2D2D),
+                  child: ElevatedButton(
+                    onPressed: () {
+                Get.toNamed(AppRoute.signIn);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40.r),
+                      ),
+                      padding: EdgeInsets.symmetric(vertical: 14.h),
+                    ),
+                    child: Text(
+                      "Yes, Delete",
+                      style: GoogleFonts.poppins(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
               ),
+
             ],
           ),
           SizedBox(height: 10.h),

@@ -1,3 +1,4 @@
+import 'package:elites_live/core/route/app_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -50,51 +51,71 @@ class LogoutBottomSheet extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child:ElevatedButton(
-                  onPressed: () => Get.back(),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12.r),
-                      side: BorderSide(
-                        color: AppColors.primaryColor,
-                        width: 1.5, // You can adjust thickness
+                child: Container(
+                  height: 48.h,
+                  decoration: BoxDecoration(
+                    gradient: AppColors.primaryGradient,
+                    borderRadius: BorderRadius.circular(40.r),
+                  ),
+                  padding: EdgeInsets.all(1.5), // Border width
+                  child: ElevatedButton(
+                    onPressed: () => Get.back(),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40.r),
+                      ),
+                      padding: EdgeInsets.symmetric(vertical: 14.h),
+                      elevation: 0,
+                      shadowColor: Colors.transparent,
+                    ),
+                    child: Text(
+                      "Cancel",
+                      style: TextStyle(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.bold,
+                        foreground: Paint()
+                          ..shader = AppColors.primaryGradient.createShader(
+                            Rect.fromLTWH(0.0, 0.0, 200.0, 70.0),
+                          ),
                       ),
                     ),
-                    padding: EdgeInsets.symmetric(vertical: 14.h),
-                  ),
-                  child: Text(
-                    "Cancel",
-                    style: GoogleFonts.poppins(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.primaryColor,
-                    ),
                   ),
                 ),
-
               ),
+
               SizedBox(width: 10.w),
               Expanded(
-                child: ElevatedButton(
-                  onPressed: () {
-                    //Get.to(() => Login());
-                  },
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12.r),
-                    ),
-                    padding: EdgeInsets.symmetric(vertical: 14.h),
+                child: Container(
+                  height: 48.h,
+                  decoration: BoxDecoration(
+                    gradient: AppColors.primaryGradient,
+                    borderRadius: BorderRadius.circular(40.r),
                   ),
-                  child: Text("Yes, Logout",
-                    style: GoogleFonts.poppins(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFF2D2D2D),
+                  child: ElevatedButton(
+                    onPressed: () {
+                     Get.toNamed(AppRoute.signIn);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40.r),
+                      ),
+                      padding: EdgeInsets.symmetric(vertical: 14.h),
+                    ),
+                    child: Text(
+                      "Yes, Logout",
+                      style: GoogleFonts.poppins(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
               ),
+
             ],
           ),
           SizedBox(height: 10.h),

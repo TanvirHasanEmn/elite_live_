@@ -85,7 +85,7 @@ class PremiumPage extends StatelessWidget {
                       SizedBox(height: 45.h,),
                       CustomElevatedButton(ontap: (){}, text: "Upgrade Now"),
                       SizedBox(height: 25.h,),
-                      CustomButtonWhite(text: "Not Now", onPressed: (){},)
+                      CustomButtonWhite(text: "Not Now", onPressed: (){Get.back();},)
                     ],
                   ),
                 ),

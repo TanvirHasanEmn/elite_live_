@@ -205,16 +205,7 @@ class SettingsPage extends StatelessWidget {
                         showArrow: true,
                         color: Color(0xFF191919), // icon color
                         textColor: Color(0xFF191919), // text color
-                        // onTap: () => Get.to(() => PrivacyPage()),
-                      ),
-
-                      settingTile(
-                        'assets/icons/bank.png',
-                        'Change Password',
-                        showArrow: true,
-                        color: Color(0xFF191919), // icon color
-                        textColor: Color(0xFF191919), // text color
-                        // onTap: () => Get.to(() => PrivacyPage()),
+                         onTap: (){Get.toNamed(AppRoute.changePass);},
                       ),
 
                       settingTile(

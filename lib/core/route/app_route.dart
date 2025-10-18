@@ -1,8 +1,8 @@
+import 'package:elites_live/features/profile/presentation/screen/change_password.dart';
 import 'package:elites_live/features/profile/presentation/screen/premium.dart';
 import 'package:elites_live/features/set_up_profile/screen/set_up_profile_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
-
 import '../../features/forgot_pass/screen/create_new_pass_screen.dart';
 import '../../features/forgot_pass/screen/forgot_otp_screen.dart';
 import '../../features/forgot_pass/screen/forgot_pass_screen.dart';
@@ -31,6 +31,7 @@ class AppRoute {
   static const String settings = '/settings';
   static const String edit_profile = '/edit_profile';
   static const String premium = '/premium';
+  static const String changePass = '/changePass';
 
   static final route = [
     GetPage(
@@ -104,6 +105,12 @@ class AppRoute {
     GetPage(
       name: premium,
       page: () => PremiumPage(),
+      transition: Transition.rightToLeft,
+    ),
+
+    GetPage(
+      name: changePass,
+      page: () => ChangePassword(),
       transition: Transition.rightToLeft,
     ),
   ];
