@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../../core/route/app_route.dart';
 import '../../../../core/utility/app_colors.dart';
 import '../../controller/settings_controller.dart';
 import 'delete.dart';
@@ -23,7 +24,6 @@ class SettingsPage extends StatelessWidget {
             // Top header + profile image
             Stack(
               children: [
-                //* Yellow background with curved white container
                 Container(
                   height: 190.h,
                   width: double.infinity,
@@ -70,7 +70,7 @@ class SettingsPage extends StatelessWidget {
                       // Go Premium Card
                       InkWell(
                         onTap: (){
-                         // Get.to(()=>UpgradePremium());
+                       Get.toNamed(AppRoute.premium);
                         },
                         child: Container(
                           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../../core/global_widget/custombuttonwhite.dart';
+import '../../../../core/route/app_route.dart';
 import '../../../../core/utility/app_colors.dart';
 import '../../controller/profile_controller.dart';
 import '../widget/profile_tab_widget.dart';
@@ -44,7 +45,7 @@ class ProfilePage extends StatelessWidget {
                         SizedBox(width: 240.w,),
                       InkWell(
                           onTap: (){
-                            Get.to(()=>SettingsPage());
+                          Get.toNamed(AppRoute.settings);
                           },
                           child: Image.asset("assets/icons/settings.png",height: 24.h, width: 24.w,)),
                     ],
@@ -145,20 +146,18 @@ class ProfilePage extends StatelessWidget {
 
                         ],
                       ),
- SizedBox(height: 24.h,),
+                      SizedBox(height: 24.h,),
                       CustomButtonWhite(
                         text:'Edit Profile',
                       onPressed: (){
-
+                          Get.toNamed(AppRoute.edit_profile);
                       },
                       ),
                       SizedBox(height: 15.h),
 
                       ProfileTabsWidget(),
 
-
                      // SizedBox(height: 200.h),
-
 
                     ],
                   ),
