@@ -1,17 +1,18 @@
+import 'package:elites_live/features/profile/presentation/screen/payment_success_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../../../core/global_widget/custom_elevated_button.dart';
 import '../../../../core/global_widget/custom_password_field.dart';
+import '../../../../core/global_widget/custom_text_fields.dart';
 import '../../../../core/global_widget/custom_text_view.dart';
 import '../../../../core/utility/app_colors.dart';
 import '../../../../core/validation/password_validation.dart';
 import '../../controller/change_password_controller.dart';
 
-class ChangePassword extends StatelessWidget {
-  const ChangePassword({super.key});
+class CardDetails extends StatelessWidget {
+  const CardDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +41,7 @@ class ChangePassword extends StatelessWidget {
                         child: const Icon(Icons.arrow_back,color: Colors.white,),
                       ),
                       SizedBox(width: 20.w),
-                      Text('Change Password',
+                      Text('Debit or credit card',
                         style: GoogleFonts.inter(
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w600,
@@ -66,56 +67,47 @@ class ChangePassword extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                       SizedBox(height: 32.h,),
+                       SizedBox(height: 16.h,),
                         Align(
                           alignment: Alignment.centerLeft,
                           child: CustomTextView(
-                            "Old Password",
+                            "Card Details",
                             fontSize: 16.sp,
                             color: AppColors.textColorBlack,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
+                        SizedBox(height: 16.h),
+                        CustomTextField(
+                          hintText: "Name on card",
+                          controller: controller.passwordController,
+                         // validator: validatePassword,
+                        ),
+                        SizedBox(height: 16.h),
+
                         SizedBox(height: 5.h),
-                        CustomPasswordField(
-                          hints: "Enter Old Password",
+                        CustomTextField(
+                          hintText: "Card number",
                           controller: controller.passwordController,
                           validator: validatePassword,
                         ),
                         SizedBox(height: 16.h),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: CustomTextView(
-                            "New Password",
-                            fontSize: 16.sp,
-                            color: AppColors.textColorBlack,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        SizedBox(height: 5.h),
-                        CustomPasswordField(
-                          hints: "Enter New Password",
+
+                        CustomTextField(
+                          hintText: "MM/YY",
                           controller: controller.passwordController,
                           validator: validatePassword,
                         ),
                         SizedBox(height: 16.h),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: CustomTextView(
-                            "Confirm New Password",
-                            fontSize: 16.sp,
-                            color: AppColors.textColorBlack,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
+
                         SizedBox(height: 5.h),
-                        CustomPasswordField(
-                          hints: "Confirm New Password",
+                        CustomTextField(
+                          hintText: "CVV",
                           controller: controller.passwordController,
                           validator: validatePassword,
                         ),
                        SizedBox(height: 280.h,),
-                        CustomElevatedButton(ontap: (){}, text: "Change Now"),
+                        CustomElevatedButton(ontap: (){ paymentSuccessBottomSheet(Get.context!);}, text: "Save"),
                         SizedBox(height: 16.h),
                       ],
                     ),

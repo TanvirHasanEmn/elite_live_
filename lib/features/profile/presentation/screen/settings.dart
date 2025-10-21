@@ -169,12 +169,12 @@ class SettingsPage extends StatelessWidget {
                         showArrow: true,
                         color: Color(0xFF2D2D2D), // icon color
                         textColor: Color(0xFF2D2D2D), // text color
-                        //onTap: () => Get.to(() => EditProfilePage()),
+                        onTap: (){Get.toNamed(AppRoute.moderator);},
                       ),
 
                       settingTile(
                         'assets/icons/earnings.png',
-                        'Notifications',
+                        'Earning',
                         showArrow: true,
                         color: Color(0xFF191919), // icon color
                         textColor: Color(0xFF191919), // text color
@@ -183,7 +183,7 @@ class SettingsPage extends StatelessWidget {
 
                       settingTile(
                         'assets/icons/wallet.png',
-                        'Privacy Policy',
+                        'Wallet',
                         showArrow: true,
                         color: Color(0xFF191919), // icon color
                         textColor: Color(0xFF191919), // text color
@@ -196,7 +196,7 @@ class SettingsPage extends StatelessWidget {
                         showArrow: true,
                         color: Color(0xFF191919), // icon color
                         textColor: Color(0xFF191919), // text color
-                        // onTap: () => Get.to(() => PrivacyPage()),
+                        onTap: (){Get.toNamed(AppRoute.carddetails);},
                       ),
 
                       settingTile(

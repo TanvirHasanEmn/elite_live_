@@ -9,7 +9,9 @@ import '../../features/forgot_pass/screen/forgot_pass_screen.dart';
 import '../../features/forgot_pass/screen/pass_changed_screen.dart';
 import '../../features/main_view/screen/main_view_screen.dart';
 import '../../features/on_boarding/screen/slider_screen.dart';
+import '../../features/profile/presentation/screen/card_details.dart';
 import '../../features/profile/presentation/screen/edit_profile.dart';
+import '../../features/profile/presentation/screen/moderator.dart';
 import '../../features/profile/presentation/screen/settings.dart';
 import '../../features/sign_in/screen/sign_in_screen.dart';
 import '../../features/sign_up/screen/sign_up_otp_screen.dart';
@@ -32,6 +34,8 @@ class AppRoute {
   static const String edit_profile = '/edit_profile';
   static const String premium = '/premium';
   static const String changePass = '/changePass';
+  static const String carddetails = '/carddetails';
+  static const String moderator = '/moderator';
 
   static final route = [
     GetPage(
@@ -111,6 +115,18 @@ class AppRoute {
     GetPage(
       name: changePass,
       page: () => ChangePassword(),
+      transition: Transition.rightToLeft,
+    ),
+
+    GetPage(
+      name: carddetails,
+      page: () => CardDetails(),
+      transition: Transition.rightToLeft,
+    ),
+
+    GetPage(
+      name: moderator,
+      page: () => ModeratorPage(),
       transition: Transition.rightToLeft,
     ),
   ];

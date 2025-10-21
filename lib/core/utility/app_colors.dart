@@ -7,7 +7,7 @@ class AppColors {
   static const Color lightAccent = Color.fromARGB(255, 137, 211, 240);
   static const Color lightBG = Color(0xfffcfcff);
   static const Color darkBG = Colors.black;
-  static final Color primaryColor = Color.lerp(Color(0xFF591AD4), Color(0xFFC121A0), 1)!;
+  static final Color primaryColor = Color.lerp(Color(0xFF591AD4), Color(0xFFC121A0), 0.5)!;
   static const LinearGradient primaryGradient = LinearGradient(
     begin: Alignment.centerLeft,
     end: Alignment.centerRight,
