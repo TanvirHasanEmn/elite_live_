@@ -1,5 +1,4 @@
 import 'package:elites_live/features/profile/presentation/screen/change_password.dart';
-import 'package:elites_live/features/profile/presentation/screen/premium.dart';
 import 'package:elites_live/features/set_up_profile/screen/set_up_profile_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
@@ -13,6 +12,8 @@ import '../../features/profile/presentation/screen/card_details.dart';
 import '../../features/profile/presentation/screen/edit_profile.dart';
 import '../../features/profile/presentation/screen/moderator.dart';
 import '../../features/profile/presentation/screen/settings.dart';
+import '../../features/profile/presentation/screen/subscription.dart';
+import '../../features/profile/presentation/screen/upgrade_premium.dart';
 import '../../features/sign_in/screen/sign_in_screen.dart';
 import '../../features/sign_up/screen/sign_up_otp_screen.dart';
 import '../../features/sign_up/screen/sign_up_screen.dart';
@@ -36,6 +37,7 @@ class AppRoute {
   static const String changePass = '/changePass';
   static const String carddetails = '/carddetails';
   static const String moderator = '/moderator';
+  static const String subscription = '/subscription';
 
   static final route = [
     GetPage(
@@ -127,6 +129,12 @@ class AppRoute {
     GetPage(
       name: moderator,
       page: () => ModeratorPage(),
+      transition: Transition.rightToLeft,
+    ),
+
+    GetPage(
+      name: subscription,
+      page: () => SubscriptionScreen(),
       transition: Transition.rightToLeft,
     ),
   ];

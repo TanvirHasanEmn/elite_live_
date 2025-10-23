@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../core/global_widget/custom_elevated_button.dart';
+import '../../../../core/route/app_route.dart';
 import '../../../../core/utility/app_colors.dart';
 import '../../controller/edit_profile_controller.dart';
 
@@ -83,7 +84,7 @@ class PremiumPage extends StatelessWidget {
                   ),
 
                       SizedBox(height: 45.h,),
-                      CustomElevatedButton(ontap: (){}, text: "Upgrade Now"),
+                      CustomElevatedButton(ontap: (){Get.toNamed(AppRoute.subscription);}, text: "Upgrade Now"),
                       SizedBox(height: 25.h,),
                       CustomButtonWhite(text: "Not Now", onPressed: (){Get.back();},)
                     ],
