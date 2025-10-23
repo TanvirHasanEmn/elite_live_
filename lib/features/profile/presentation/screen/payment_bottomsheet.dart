@@ -77,6 +77,7 @@ class PaymentDialog {
               // Confirm button
               CustomElevatedButton(
                 ontap: () {
+                  Get.back();
                   paymentSuccessBottomSheet(Get.context!);
                 },
                 text: "Confirm and pay",

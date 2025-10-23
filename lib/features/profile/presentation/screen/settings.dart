@@ -178,7 +178,7 @@ class SettingsPage extends StatelessWidget {
                         showArrow: true,
                         color: Color(0xFF191919), // icon color
                         textColor: Color(0xFF191919), // text color
-                       // onTap: () => Get.to(() => NotificationPage()),
+                       onTap: () {Get.toNamed(AppRoute.earnings);},
                       ),
 
                       settingTile(

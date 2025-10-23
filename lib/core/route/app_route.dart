@@ -9,6 +9,7 @@ import '../../features/forgot_pass/screen/pass_changed_screen.dart';
 import '../../features/main_view/screen/main_view_screen.dart';
 import '../../features/on_boarding/screen/slider_screen.dart';
 import '../../features/profile/presentation/screen/card_details.dart';
+import '../../features/profile/presentation/screen/earning_overview.dart';
 import '../../features/profile/presentation/screen/edit_profile.dart';
 import '../../features/profile/presentation/screen/moderator.dart';
 import '../../features/profile/presentation/screen/settings.dart';
@@ -38,6 +39,7 @@ class AppRoute {
   static const String carddetails = '/carddetails';
   static const String moderator = '/moderator';
   static const String subscription = '/subscription';
+  static const String earnings = '/earnings';
 
   static final route = [
     GetPage(
@@ -135,6 +137,11 @@ class AppRoute {
     GetPage(
       name: subscription,
       page: () => SubscriptionScreen(),
+      transition: Transition.rightToLeft,
+    ),
+    GetPage(
+      name: earnings,
+      page: () => EarningsPage(),
       transition: Transition.rightToLeft,
     ),
   ];
