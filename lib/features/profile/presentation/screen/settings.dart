@@ -187,7 +187,7 @@ class SettingsPage extends StatelessWidget {
                         showArrow: true,
                         color: Color(0xFF191919), // icon color
                         textColor: Color(0xFF191919), // text color
-                       // onTap: () => Get.to(() => PrivacyPage()),
+                        onTap: () => Get.toNamed(AppRoute.wallet),
                       ),
 
                       settingTile(
@@ -196,7 +196,7 @@ class SettingsPage extends StatelessWidget {
                         showArrow: true,
                         color: Color(0xFF191919), // icon color
                         textColor: Color(0xFF191919), // text color
-                        onTap: (){Get.toNamed(AppRoute.carddetails);},
+                        onTap: (){Get.toNamed(AppRoute.subscription);},
                       ),
 
                       settingTile(
@@ -205,7 +205,16 @@ class SettingsPage extends StatelessWidget {
                         showArrow: true,
                         color: Color(0xFF191919), // icon color
                         textColor: Color(0xFF191919), // text color
-                         onTap: (){Get.toNamed(AppRoute.changePass);},
+                        onTap: (){Get.toNamed(AppRoute.changePass);},
+                      ),
+
+                      settingTile(
+                        'assets/icons/bank.png',
+                        'Bank Information',
+                        showArrow: true,
+                        color: Color(0xFF191919), // icon color
+                        textColor: Color(0xFF191919), // text color
+                         onTap: (){Get.toNamed(AppRoute.bank);},
                       ),
 
                       settingTile(

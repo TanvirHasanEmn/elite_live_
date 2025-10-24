@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../main_view/screen/main_view_screen.dart';
 import '../../controller/logout_controller.dart';
 
 
@@ -50,7 +51,7 @@ Padding(
             ),
           ),
           SizedBox(height: 50.h),
-         CustomElevatedButton(ontap: (){}, text: "Done"),
+         CustomElevatedButton(ontap: (){Get.to(()=> MainViewScreen());}, text: "Done"),
           SizedBox(height: 10.h),
         ],
       ),

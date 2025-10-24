@@ -8,6 +8,7 @@ import '../../features/forgot_pass/screen/forgot_pass_screen.dart';
 import '../../features/forgot_pass/screen/pass_changed_screen.dart';
 import '../../features/main_view/screen/main_view_screen.dart';
 import '../../features/on_boarding/screen/slider_screen.dart';
+import '../../features/profile/presentation/screen/billing_payment.dart';
 import '../../features/profile/presentation/screen/card_details.dart';
 import '../../features/profile/presentation/screen/earning_overview.dart';
 import '../../features/profile/presentation/screen/edit_profile.dart';
@@ -15,6 +16,7 @@ import '../../features/profile/presentation/screen/moderator.dart';
 import '../../features/profile/presentation/screen/settings.dart';
 import '../../features/profile/presentation/screen/subscription.dart';
 import '../../features/profile/presentation/screen/upgrade_premium.dart';
+import '../../features/profile/presentation/screen/wallet.dart';
 import '../../features/sign_in/screen/sign_in_screen.dart';
 import '../../features/sign_up/screen/sign_up_otp_screen.dart';
 import '../../features/sign_up/screen/sign_up_screen.dart';
@@ -40,6 +42,8 @@ class AppRoute {
   static const String moderator = '/moderator';
   static const String subscription = '/subscription';
   static const String earnings = '/earnings';
+  static const String wallet = '/wallet';
+  static const String bank = '/bank';
 
   static final route = [
     GetPage(
@@ -142,6 +146,18 @@ class AppRoute {
     GetPage(
       name: earnings,
       page: () => EarningsPage(),
+      transition: Transition.rightToLeft,
+    ),
+
+    GetPage(
+      name: wallet,
+      page: () => WalletPage(),
+      transition: Transition.rightToLeft,
+    ),
+
+    GetPage(
+      name: bank,
+      page: () => BillingPaymentPage(),
       transition: Transition.rightToLeft,
     ),
   ];
